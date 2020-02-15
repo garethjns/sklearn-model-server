@@ -1,0 +1,9 @@
+grpcio
+grpcio-tools
+grpc-utils
+grpclib
+sklearn
+pandas
+tables
+ipython
+dataclasses

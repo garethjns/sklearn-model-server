@@ -1,0 +1,10 @@
+grpcio
+grpclib
+grpcio-tools
+grpc-utils
+sklearn
+pandas
+tables
+ipython
+dataclasses
+pytest
