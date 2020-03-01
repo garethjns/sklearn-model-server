@@ -62,7 +62,7 @@ Accepts gRPC requests for predictions, and returns the predicted probabilities. 
  
 Run:
   ```Bash
-cd Model-Server
+cd Model-Server-GRPC
 sudo docker build . -t model_server_grpc
 sudo docker run -p 8080:8080 model_server_grpc
  ```
@@ -74,7 +74,7 @@ A simple service to emulate a client that randomly queries the server for predic
  
 Run:
  ```Bash
-cd Model-Client_grpc
+cd Model-Client-GRPC
 sudo docker build . -t model_client_grpc
 sudo docker run model_client_grpc
  ```
@@ -86,8 +86,8 @@ Accepts REST requests for predictions, and returns the path to a file containing
  
 Run:
   ```Bash
-cd Model-Server
-sudo docker build . -t model_server_grpc
+cd Model-Server-REST
+sudo docker build . -t model_server_rest
 sudo docker run -p 8000:8000 -t -i model_server_rest
  ```
  
@@ -98,7 +98,7 @@ A simple service to emulate a client that randomly queries the server for predic
  
 Run:
  ```Bash
-cd Model-Client_grpc
+cd Model-Client-REST
 sudo docker build . -t model_client_rest
 sudo docker run model_client_rest
  ```
