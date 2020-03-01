@@ -1,14 +1,41 @@
-version: '3'
-services:
-  model_client:
-    build: Model-Client/
-    depends_on:
-      - model_server
-      - minio
+version: '3.7'
+
+networks:
   model_server:
-    build: Model-Server/
+
+services:
+  model_client_grpc:
+    build: Model-Client-GRPC/
+    depends_on:
+      - model_server_grpc
+      - minio
+    networks:
+      - model_server
+  model_server_grpc:
+    build: Model-Server-GRPC/
+    depends_on:
+      - minio
     ports:
       - "8080:8080"
+    networks:
+      - model_server
+  model_client_rest:
+    build: Model-Client-REST/
+    depends_on:
+      - model_server_rest
+      - minio
+    networks:
+      - model_server
+    environment:
+      - MODEL_SERVER_REST_HOST=model_server_rest
+  model_server_rest:
+    build: Model-Server-REST/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - minio
+    networks:
+      - model_server
   minio:
     image: "minio/minio"
     ports:
@@ -17,3 +44,5 @@ services:
     environment:
       MINIO_ACCESS_KEY: admin
       MINIO_SECRET_KEY: passpass
+    networks:
+      - model_server
