@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="model-client-gj",
+    name="model-client-grpc",
     version=f"{MAJOR}.{MINOR}.{PATCH}",
     author="Gareth Jones",
     author_email="",

@@ -1,6 +1,8 @@
 import os
 from dataclasses import dataclass
+
 import pandas as pd
+from tests.common.fixtures.sample_data import SAMPLE_DATA
 
 
 @dataclass
@@ -19,8 +21,11 @@ class DataFixture:
         self.data_path = path
 
     def load_data(self) -> pd.DataFrame:
-        return pd.read_hdf(self.data_path,
-                           key=self.data_key)
+        try:
+            return pd.read_hdf(self.data_path,
+                               key=self.data_key)
+        except FileNotFoundError:
+            return pd.DataFrame(SAMPLE_DATA)[["f0", "f1", "f2", "f3", "f4"]]
 
     def build_rest_request(self, host: str, port: str) -> str:
         model_name = 'SGDClassifier.pkl'

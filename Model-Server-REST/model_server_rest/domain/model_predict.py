@@ -38,5 +38,5 @@ class ModelPredict:
 
         return preds_path
 
-    def predict(self, x: Union[np.array, pd.DataFrame], model_name: str):
+    def predict(self, x: Union[np.array, pd.DataFrame], model_name: str) -> np.array:
         return self.models[model_name].predict_proba(x)[:, 0]
