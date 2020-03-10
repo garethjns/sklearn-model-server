@@ -1,10 +1,15 @@
 # Sklearn-Model-Servers
 
+![Test Model-Client-GRPC](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Client-GRPC/badge.svg)
+![Test Model-Client-REST](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Client-REST/badge.svg)
+![Test Model-Server-GRPC](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Server-GRPC/badge.svg)
+![Test Model-Server-REST](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Server-REST/badge.svg)
+
 A small set of Dockerized microservices for training and serving Sklearn models over gRPC and REST. Currently includes a server and a client that hassles the server for predictions. 
 
 The servers include pre-trained models on generated data. These are handled locally, but in the future the training will be moved to a separate service, and models and data will be persisted in a will be moved to a Minio instance. 
- 
- 
+
+
  ## Running
  Running the whole system requires docker and docker-compose, running the individual services just requires docker.
  
