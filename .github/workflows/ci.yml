@@ -13,6 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
+      working-directory: ./Model-Client-GRPC
       run: actions/Model-Client-GRPC
 
   test-model-client-rest:
@@ -20,6 +21,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
+      working-directory: ./Model-Client-REST
       run: actions/Model-Client-REST
 
   test-model-server-grpc:
@@ -27,6 +29,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
+      working-directory: ./Model-Server-GRPC
       run: actions/Model-SERVER-GRPC
 
   test-model-server-rest:
@@ -35,4 +38,5 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run tests
-      run: actions/Model-Client-REST
+      working-directory: ./Model-Server-REST
+      run: actions/Model-Server-REST
