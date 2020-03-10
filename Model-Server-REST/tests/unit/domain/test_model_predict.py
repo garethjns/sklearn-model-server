@@ -1,6 +1,6 @@
 import unittest
 
-import pandas as pd
+import numpy as np
 
 from model_server_rest.domain.model_predict import ModelPredict
 from tests.common.fixtures.data_fixture import DataFixture
@@ -25,4 +25,4 @@ class TestModelPredict(unittest.TestCase):
                                   model_name=mod)
 
         # Assert
-        self.assertIsInstance(preds, pd.DataFrame)
+        self.assertIsInstance(preds, np.ndarray)

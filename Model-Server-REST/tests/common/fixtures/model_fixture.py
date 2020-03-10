@@ -1,9 +1,6 @@
 import os
 from dataclasses import dataclass
 
-import numpy as np
-import pandas as pd
-
 
 @dataclass
 class ModelFixture:
@@ -21,4 +18,3 @@ class ModelFixture:
     @property
     def model_name(self) -> str:
         return self.fn
-
