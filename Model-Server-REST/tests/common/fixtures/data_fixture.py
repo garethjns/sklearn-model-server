@@ -25,7 +25,7 @@ class DataFixture:
             return pd.read_hdf(self.data_path,
                                key=self.data_key)
         except FileNotFoundError:
-            return pd.DataFrame(SAMPLE_DATA)
+            return pd.DataFrame(SAMPLE_DATA)[["f0", "f1", "f2", "f3", "f4"]]
 
     def build_rest_request(self, host: str, port: str) -> str:
         model_name = 'SGDClassifier.pkl'
