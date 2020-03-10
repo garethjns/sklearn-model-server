@@ -10,8 +10,13 @@ from model_server_rest.application.model_endpoint import ModelEndpoint
 from tests.common.fixtures.data_fixture import DataFixture
 from tests.common.model_server import ModelServer
 from tests.config import Config
+import os
 
 
+valid_env = os.environ.get('RUN_MODEL_SERVER_REST_INTEGRATION_TESTS', False) is not False
+
+
+@unittest.skipUnless(valid_env, "Skipping test in CI/Windows")
 class TestModelEndpoint(unittest.TestCase):
     _sut = ModelEndpoint()
     _test_server: threading.Thread
