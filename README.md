@@ -4,6 +4,7 @@
 ![Test Model-Client-REST](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Client-REST/badge.svg)
 ![Test Model-Server-GRPC](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Server-GRPC/badge.svg)
 ![Test Model-Server-REST](https://github.com/garethjns/sklearn-model-server/workflows/Test%20Model-Server-REST/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=garethjns_sklearn-model-server&metric=alert_status)](https://sonarcloud.io/dashboard?id=garethjns_sklearn-model-server)
 
 A small set of Dockerized microservices for training and serving Sklearn models over gRPC and REST. Currently includes a server and a client that hassles the server for predictions. 
 
